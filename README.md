@@ -1,7 +1,19 @@
 # gemm_cpu
 
+## Install
+* Linux
+    ```
+    git clone https://github.com/Daydream0929/gemm_cpu.git
+    ```
 
-## 参考链接
+## Setup
+* Linux
+    ```
+    chmod +x setup.h
+    ./setup.h
+    ```
+
+## Ref
 * [openblas](https://github.com/OpenMathLib/OpenBLAS)
 * [how-to-optimize-gemm](git@github.com:Daydream0929/how-to-optimize-gemm.git)
 * [optimize_gemm](git@github.com:Daydream0929/optimize_gemm.git)
