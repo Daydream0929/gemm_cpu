@@ -1,5 +1,8 @@
 #bin/bash
 
+## clean
+rm build/ -rf
+
 ## build 
 set -e
 cmake -B build
