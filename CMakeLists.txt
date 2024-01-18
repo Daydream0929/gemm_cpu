@@ -13,6 +13,3 @@ add_subdirectory(test)
 
 # 添加链接库
 target_link_libraries(a.out zen3_sources)
-
-# # 添加头文件目录
-# include_directories(${CMAKE_CURRENT_SOURCE_DIR}/zen3/include)
