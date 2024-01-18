@@ -7,12 +7,12 @@ set(CMAKE_CXX_STANDARD 11)
 # 查找 Google Benchmark
 find_package(benchmark REQUIRED)
 
-# 查找 OpenBLAS
-find_package(OpenBLAS REQUIRED)
+# set(OpenBLAS_DIR "${CMAKE_SOURCE_DIR}/OpenBLAS/cmake")
+# # 查找 OpenBLAS
+# find_package(OpenBLAS REQUIRED)
 
 # 添加测试可执行文件
 add_executable(sgemm_test sgemm_test.cc)
 
 # 链接 Google Benchmark 和其他必要的库
-target_link_libraries(sgemm_test benchmark::benchmark zen3_sources OpenBLAS::OpenBLAS) 
-
+target_link_libraries(sgemm_test benchmark::benchmark zen3_sources ${CMAKE_SOURCE_DIR}/OpenBLAS/build/lib/libopenblas.a) 

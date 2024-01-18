@@ -19,7 +19,7 @@ static void BM_zne3_sgemm(benchmark::State& state) {
     delete[] B;
     delete[] C;
 }
-BENCHMARK(BM_zne3_sgemm)->Range(8, 8<<10);
+BENCHMARK(BM_zne3_sgemm)->Range(2, 2<<10);
 
 static void BM_OpenBLAS_sgemm(benchmark::State& state) {
     int N = state.range(0);
@@ -38,6 +38,6 @@ static void BM_OpenBLAS_sgemm(benchmark::State& state) {
     delete[] B;
     delete[] C;
 }
-BENCHMARK(BM_OpenBLAS_sgemm)->Range(8, 8<<10);
+BENCHMARK(BM_OpenBLAS_sgemm)->Range(2, 2<<10);
 
 BENCHMARK_MAIN();

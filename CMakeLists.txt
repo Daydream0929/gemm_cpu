@@ -6,9 +6,10 @@ project(gemm_cpu LANGUAGES CXX)
 add_executable(a.out main.cpp)
 
 # 添加子目录
-add_subdirectory(zen3 benchmark)
-
-# 添加测试目录
+add_subdirectory(OpenBLAS)
+set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Turn off the fking test!")
+add_subdirectory(benchmark)
+add_subdirectory(zen3)
 add_subdirectory(test)
 
 # 添加链接库

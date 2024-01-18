@@ -1,12 +1,12 @@
 #bin/bash
 
-## clean
-rm build/ -rf
+# ## clean
+# rm build/ -rf
 
 ## build 
 set -e
 cmake -B build
-cmake --build build
+cmake --build build -j8
 
 
 ## run
