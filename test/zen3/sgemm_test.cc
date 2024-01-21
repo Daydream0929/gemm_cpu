@@ -18,7 +18,7 @@ static void openblas_gemm(benchmark::State &state)
     for (auto _ : state)
     {
         // 执行 GEMM
-        cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, M, N, K, 1.0f,
+        cblas_sgemm(CblasColMajor, CblasNoTrans, CblasNoTrans, M, N, K, 1.0f,
                     A.data(), K, B.data(), N, 0.0f, C.data(), N);   
     }
 

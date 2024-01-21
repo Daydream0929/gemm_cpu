@@ -50,7 +50,17 @@ void gemm::zen3::sgemm(
     int i, j, p;
     for (j = 0; j < n; j += 4) {
         for (i = 0; i < m; i ++) {
-            AddDot1x4(k, alpha, beta, &A(i, 0), lda, &B(0, j), ldb, &C(i, j), ldc);
+            // AddDot1x4(k, alpha, beta, &A(i, 0), lda, &B(0, j), ldb, &C(i, j), ldc);
+            C(i, j)     += beta * C(i, j);
+            C(i, j + 1) += beta * C(i, j + 1);
+            C(i, j + 2) += beta * C(i, j + 2);
+            C(i, j + 3) += beta * C(i, j + 3);
+            for (p = 0; p < k; p ++) {
+                C(i, j) += alpha * A(i, p) * B(p, j);
+                C(i, j + 1) += alpha * A(i, p) * B(p, j + 1);
+                C(i, j + 2) += alpha * A(i, p) * B(p, j + 2);
+                C(i, j + 3) += alpha * A(i, p) * B(p, j + 3);
+            }
         }
     }
 }

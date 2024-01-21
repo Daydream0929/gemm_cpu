@@ -13,4 +13,4 @@ add_subdirectory(zen3)
 add_subdirectory(test)
 
 # 添加链接库
-target_link_libraries(a.out zen3_sources)
+target_link_libraries(a.out zen3_sources  ${CMAKE_SOURCE_DIR}/OpenBLAS/build/lib/libopenblas.a)

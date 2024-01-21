@@ -23,8 +23,6 @@ namespace zen3 {
         const int ldc
     ) ;
 
-    void AddDot(int, int, int, const float*, int, const float*, float*);
-
     void AddDot1x4(int, int, int, const float*, int, const float*, int, float*, int);
 
 }
