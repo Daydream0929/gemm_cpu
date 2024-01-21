@@ -5,9 +5,30 @@
 #define B(i_, j_) B[ (i_) + (j_) * ldb ]
 #define C(i_, j_) C[ (i_) + (j_) * ldc ]
 
-void gemm::zen3::printf()
+void gemm::zen3::AddDot1x4(int k, int alpha, int beta, const float* A, int lda, const float* B, int ldb, float *C, int ldc)
 {
-    std::cout << "This is zen3 gemm implement~" << std::endl;
+    int p;
+    
+    *C *= beta;
+    for (p = 0; p < k; p ++) {
+        C(0, 0) += alpha * A(0, p) * B(p, 0);
+    }
+
+    *C *= beta;
+    for (p = 0; p < k; p ++) {
+        C(0, 1) += alpha * A(0, p) * B(p, 1);
+    }
+
+    *C *= beta;
+    for (p = 0; p < k; p ++) {
+        C(0, 2) += alpha * A(0, p) * B(p, 2);
+    }
+
+    *C *= beta;
+    for (p = 0; p < k; p ++) {
+        C(0, 3) += alpha * A(0, p) * B(p, 3);
+    }
+
 }
 
 void gemm::zen3::sgemm(
@@ -27,12 +48,9 @@ void gemm::zen3::sgemm(
 )
 {
     int i, j, p;
-    for (j = 0; j < n; j ++) {
+    for (j = 0; j < n; j += 4) {
         for (i = 0; i < m; i ++) {
-            C(i, j) *= beta;
-            for (p = 0; p < k; p ++) {
-                C(i, j) += alpha * A(i, p) * B(p, j);
-            }
+            AddDot1x4(k, alpha, beta, &A(i, 0), lda, &B(0, j), ldb, &C(i, j), ldc);
         }
     }
 }

@@ -1,6 +1,6 @@
 {
   "context": {
-    "date": "2024-01-19T15:10:20+08:00",
+    "date": "2024-01-21T22:06:22+08:00",
     "host_name": "S06G14L10",
     "executable": "./build/test/zen3/sgemm_test",
     "num_cpus": 32,
@@ -32,7 +32,7 @@
         "num_sharing": 16
       }
     ],
-    "load_avg": [0.103027,0.0546875,0.0297852],
+    "load_avg": [0.0507812,0.034668,0.00488281],
     "library_build_type": "debug"
   },
   "benchmarks": [
@@ -45,11 +45,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 4224227,
-      "real_time": 1.4287822813617632e+02,
-      "cpu_time": 1.4287757144679961e+02,
+      "iterations": 4329796,
+      "real_time": 1.3563185933035422e+02,
+      "cpu_time": 1.3562907929149551e+02,
       "time_unit": "ns",
-      "GFlops": 2.6509813885660519e-08
+      "GFlops": 2.7245252200579789e-08
     },
     {
       "name": "openblas_gemm/4/real_time",
@@ -60,11 +60,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 4326673,
-      "real_time": 1.6179211324771481e+02,
-      "cpu_time": 1.6179137896485358e+02,
+      "iterations": 4530640,
+      "real_time": 1.5440306579922733e+02,
+      "cpu_time": 1.5440278680274753e+02,
       "time_unit": "ns",
-      "GFlops": 1.8285150894045795e-07
+      "GFlops": 1.8297615419883242e-07
     },
     {
       "name": "openblas_gemm/8/real_time",
@@ -75,11 +75,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 2859163,
-      "real_time": 2.4396158455802910e+02,
-      "cpu_time": 2.4395895232276018e+02,
+      "iterations": 2958617,
+      "real_time": 2.3708529356346406e+02,
+      "cpu_time": 2.3708313816894858e+02,
       "time_unit": "ns",
-      "GFlops": 1.4680457702939642e-06
+      "GFlops": 1.4598444826805691e-06
     },
     {
       "name": "openblas_gemm/16/real_time",
@@ -90,11 +90,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 1205038,
-      "real_time": 5.7991760508879327e+02,
-      "cpu_time": 5.7989838577704620e+02,
+      "iterations": 1218549,
+      "real_time": 5.7424654155268070e+02,
+      "cpu_time": 5.7423539143686492e+02,
       "time_unit": "ns",
-      "GFlops": 1.1722571980185008e-05
+      "GFlops": 1.1707079234713087e-05
     },
     {
       "name": "openblas_gemm/32/real_time",
@@ -105,11 +105,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 332685,
-      "real_time": 2.0989780002254652e+03,
-      "cpu_time": 2.0988893127132274e+03,
+      "iterations": 344928,
+      "real_time": 2.0300313225394543e+03,
+      "cpu_time": 2.0300076015864183e+03,
       "time_unit": "ns",
-      "GFlops": 9.3850982602617427e-05
+      "GFlops": 9.3594157962290369e-05
     },
     {
       "name": "openblas_gemm/64/real_time",
@@ -120,11 +120,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 73286,
-      "real_time": 9.5326697050048460e+03,
-      "cpu_time": 9.5324534017411297e+03,
+      "iterations": 75655,
+      "real_time": 9.2363512265301397e+03,
+      "cpu_time": 9.2361479082678034e+03,
       "time_unit": "ns",
-      "GFlops": 7.5047175880398769e-04
+      "GFlops": 7.5029463794241513e-04
     },
     {
       "name": "openblas_gemm/128/real_time",
@@ -135,11 +135,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 24533,
-      "real_time": 2.7993594464723603e+04,
-      "cpu_time": 2.7992675335262720e+04,
+      "iterations": 22265,
+      "real_time": 3.1517756749496661e+04,
+      "cpu_time": 3.1516776689872000e+04,
       "time_unit": "ns",
-      "GFlops": 6.1073186360980159e-03
+      "GFlops": 5.9769814197999302e-03
     },
     {
       "name": "openblas_gemm/256/real_time",
@@ -150,11 +150,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 6568,
-      "real_time": 8.6858521772383494e+04,
-      "cpu_time": 8.6857240408038924e+04,
+      "iterations": 6103,
+      "real_time": 9.4486720794080888e+04,
+      "cpu_time": 9.4485556119940957e+04,
       "time_unit": "ns",
-      "GFlops": 5.8817195604944729e-02
+      "GFlops": 5.8188310120448915e-02
     },
     {
       "name": "openblas_gemm/512/real_time",
@@ -165,11 +165,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 1791,
-      "real_time": 3.7517861865090631e+05,
-      "cpu_time": 3.7509717811278626e+05,
+      "iterations": 1782,
+      "real_time": 3.9813312736896990e+05,
+      "cpu_time": 3.9812400561167247e+05,
       "time_unit": "ns",
-      "GFlops": 3.9949027606512233e-01
+      "GFlops": 3.7835882105897800e-01
     },
     {
       "name": "openblas_gemm/1024/real_time",
@@ -180,11 +180,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 354,
-      "real_time": 1.9697713276626552e+06,
-      "cpu_time": 1.9696858728813552e+06,
+      "iterations": 358,
+      "real_time": 1.9833682067224018e+06,
+      "cpu_time": 1.9832519189944160e+06,
       "time_unit": "ns",
-      "GFlops": 3.0797168704343592e+00
+      "GFlops": 3.0244296826208177e+00
     },
     {
       "name": "openblas_gemm/2048/real_time",
@@ -195,11 +195,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 56,
-      "real_time": 1.2228367035537044e+07,
-      "cpu_time": 1.2227792196428571e+07,
+      "iterations": 55,
+      "real_time": 1.2714928745249793e+07,
+      "cpu_time": 1.2713931472727293e+07,
       "time_unit": "ns",
-      "GFlops": 2.5087845122260926e+01
+      "GFlops": 2.4566496922572611e+01
     },
     {
       "name": "zen3_gemm/2/real_time",
@@ -210,11 +210,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 16740223,
-      "real_time": 4.1204274280282455e+01,
-      "cpu_time": 4.1204125237758156e+01,
+      "iterations": 17181455,
+      "real_time": 3.9834741587330399e+01,
+      "cpu_time": 3.9834657949515886e+01,
       "time_unit": "ns",
-      "GFlops": 2.3196180215244127e-08
+      "GFlops": 2.3377498590041323e-08
     },
     {
       "name": "zen3_gemm/4/real_time",
@@ -225,11 +225,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 2584602,
-      "real_time": 2.7145228743145890e+02,
-      "cpu_time": 2.7145138129584359e+02,
+      "iterations": 2665908,
+      "real_time": 2.6030793672645797e+02,
+      "cpu_time": 2.6030859579550378e+02,
       "time_unit": "ns",
-      "GFlops": 1.8244114446899765e-07
+      "GFlops": 1.8444946585202401e-07
     },
     {
       "name": "zen3_gemm/8/real_time",
@@ -240,11 +240,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 368581,
-      "real_time": 1.8995497652020463e+03,
-      "cpu_time": 1.8994571668100114e+03,
+      "iterations": 383792,
+      "real_time": 1.8161672754970421e+03,
+      "cpu_time": 1.8161716997748777e+03,
       "time_unit": "ns",
-      "GFlops": 1.4625689081176877e-06
+      "GFlops": 1.4690892903641561e-06
     },
     {
       "name": "zen3_gemm/16/real_time",
@@ -255,11 +255,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 51140,
-      "real_time": 1.3639480074237770e+04,
-      "cpu_time": 1.3638785099726250e+04,
+      "iterations": 53084,
+      "real_time": 1.3169196084476547e+04,
+      "cpu_time": 1.3168971271946331e+04,
       "time_unit": "ns",
-      "GFlops": 1.1744415411179711e-05
+      "GFlops": 1.1718365479705414e-05
     },
     {
       "name": "zen3_gemm/32/real_time",
@@ -270,11 +270,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 6695,
-      "real_time": 1.0447021105338536e+05,
-      "cpu_time": 1.0446926243465266e+05,
+      "iterations": 6936,
+      "real_time": 1.0104788336505406e+05,
+      "cpu_time": 1.0104261274509822e+05,
       "time_unit": "ns",
-      "GFlops": 9.3699414516877513e-05
+      "GFlops": 9.3506892697067399e-05
     },
     {
       "name": "zen3_gemm/64/real_time",
@@ -285,11 +285,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 836,
-      "real_time": 8.3795867943660018e+05,
-      "cpu_time": 8.3793250239234441e+05,
+      "iterations": 873,
+      "real_time": 8.0081321762337047e+05,
+      "cpu_time": 8.0078494959908212e+05,
       "time_unit": "ns",
-      "GFlops": 7.4841250692995597e-04
+      "GFlops": 7.4993641309267279e-04
     },
     {
       "name": "zen3_gemm/128/real_time",
@@ -300,11 +300,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 106,
-      "real_time": 6.5822490283127716e+06,
-      "cpu_time": 6.5822022641509380e+06,
+      "iterations": 111,
+      "real_time": 6.3292388285107501e+06,
+      "cpu_time": 6.3289909279279178e+06,
       "time_unit": "ns",
-      "GFlops": 6.0114567969361777e-03
+      "GFlops": 5.9701527381632348e-03
     },
     {
       "name": "zen3_gemm/256/real_time",
@@ -315,11 +315,11 @@
       "repetitions": 1,
       "repetition_index": 0,
       "threads": 1,
-      "iterations": 13,
-      "real_time": 5.2817133230676584e+07,
-      "cpu_time": 5.2816444923077092e+07,
+      "iterations": 14,
+      "real_time": 5.0838712927153602e+07,
+      "cpu_time": 5.0837513500000194e+07,
       "time_unit": "ns",
-      "GFlops": 4.8868804419453529e-02
+      "GFlops": 4.7144095608624488e-02
     },
     {
       "name": "zen3_gemm/512/real_time",
@@ -331,10 +331,10 @@
       "repetition_index": 0,
       "threads": 1,
       "iterations": 2,
-      "real_time": 4.2926591899595225e+08,
-      "cpu_time": 4.2925298749999994e+08,
+      "real_time": 4.0917284600436687e+08,
+      "cpu_time": 4.0915560550000054e+08,
       "time_unit": "ns",
-      "GFlops": 3.1266802711459984e-01
+      "GFlops": 3.2802207993676974e-01
     },
     {
       "name": "zen3_gemm/1024/real_time",
@@ -346,10 +346,10 @@
       "repetition_index": 0,
       "threads": 1,
       "iterations": 1,
-      "real_time": 3.8832901360001416e+09,
-      "cpu_time": 3.8831626640000005e+09,
+      "real_time": 3.7499686450464649e+09,
+      "cpu_time": 3.7498859550000000e+09,
       "time_unit": "ns",
-      "GFlops": 5.5300623254793602e-01
+      "GFlops": 5.7266709438670282e-01
     },
     {
       "name": "zen3_gemm/2048/real_time",
@@ -361,10 +361,10 @@
       "repetition_index": 0,
       "threads": 1,
       "iterations": 1,
-      "real_time": 3.7323423736990662e+10,
-      "cpu_time": 3.7322069583000000e+10,
+      "real_time": 3.6317765993007927e+10,
+      "cpu_time": 3.6316644793000000e+10,
       "time_unit": "ns",
-      "GFlops": 4.6029724671194355e-01
+      "GFlops": 4.7304311579372899e-01
     }
   ]
 }

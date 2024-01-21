@@ -10,7 +10,10 @@ int main()
     float B[k * n] = {13.0, 17.0, 14.0, 18.0, 15.0, 19.0, 16.0, 20.0};
     float C[m * n];
 
+    float CC[m * n];
+
     gemm::zen3::sgemm('N', 'N', m, n, k, alpha, A, m, B, k, beta, C, m);
+    
 
      // Display the result
     for (int i = 0; i < m; ++i) {
