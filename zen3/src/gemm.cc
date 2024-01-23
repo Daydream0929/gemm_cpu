@@ -7,20 +7,31 @@
 
 void gemm::zen3::AddDot1x4(int k, int alpha, int beta, const float* A, int lda, const float* B, int ldb, float *C, int ldc)
 {
-    int p;
-    
     C(0, 0) *= beta;
     C(0, 1) *= beta;
     C(0, 2) *= beta;
     C(0, 3) *= beta;
 
+    int p;
+    register float c_00_reg, c_01_reg, c_02_reg, c_03_reg, a_0p_reg, alpha_reg;
+    c_00_reg = 0.0f;
+    c_01_reg = 0.0f;
+    c_02_reg = 0.0f;
+    c_03_reg = 0.0f;
+    alpha_reg = alpha;
+    
     for (p = 0; p < k; p ++) {
-        C(0, 0) += alpha * A(0, p) * B(p, 0);
-        C(0, 1) += alpha * A(0, p) * B(p, 1);
-        C(0, 2) += alpha * A(0, p) * B(p, 2);
-        C(0, 3) += alpha * A(0, p) * B(p, 3);
+        a_0p_reg = A(0, p);
+        c_00_reg += alpha_reg * a_0p_reg * B(p, 0);
+        c_01_reg += alpha_reg * a_0p_reg * B(p, 1);
+        c_02_reg += alpha_reg * a_0p_reg * B(p, 2);
+        c_03_reg += alpha_reg * a_0p_reg * B(p, 3);
     }
 
+    C(0, 0) += c_00_reg;
+    C(0, 1) += c_01_reg;
+    C(0, 2) += c_02_reg;
+    C(0, 3) += c_03_reg;
 }
 
 void gemm::zen3::sgemm(
