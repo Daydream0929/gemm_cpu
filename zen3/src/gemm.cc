@@ -19,13 +19,19 @@ void gemm::zen3::AddDot1x4(int k, int alpha, int beta, const float* A, int lda, 
     c_02_reg = 0.0f;
     c_03_reg = 0.0f;
     alpha_reg = alpha;
+
+    const float *bp0_pntr, *bp1_pntr, *bp2_pntr, *bp3_pntr;
+    bp0_pntr = &B(0, 0);
+    bp1_pntr = &B(0, 1);
+    bp2_pntr = &B(0, 2);
+    bp3_pntr = &B(0, 3);
     
     for (p = 0; p < k; p ++) {
         a_0p_reg = A(0, p);
-        c_00_reg += alpha_reg * a_0p_reg * B(p, 0);
-        c_01_reg += alpha_reg * a_0p_reg * B(p, 1);
-        c_02_reg += alpha_reg * a_0p_reg * B(p, 2);
-        c_03_reg += alpha_reg * a_0p_reg * B(p, 3);
+        c_00_reg += alpha_reg * a_0p_reg * (*bp0_pntr++);
+        c_01_reg += alpha_reg * a_0p_reg * (*bp1_pntr++);
+        c_02_reg += alpha_reg * a_0p_reg * (*bp2_pntr++);
+        c_03_reg += alpha_reg * a_0p_reg * (*bp3_pntr++);
     }
 
     C(0, 0) += c_00_reg;
