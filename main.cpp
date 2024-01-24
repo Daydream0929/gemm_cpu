@@ -5,12 +5,15 @@
 int main()
 {
     std::cout << "This is my optimized_gemm for zen3 ...." << std::endl;
-    int m = 3, k = 2, n = 4;
+    int m = 8, k = 8, n = 8;
     float alpha = 1.0f, beta = 0.0f;
-    float A[m * k] = {1.0, 5.0, 9.0, 2.0, 6.0, 10.0, 3.0, 7.0, 11.0, 4.0, 8.0, 12.0};
-    float B[k * n] = {13.0, 17.0, 14.0, 18.0, 15.0, 19.0, 16.0, 20.0};
+    float *A = (float*)malloc(m * k);
+    float *B = (float*)malloc(k * n);
+    
+    for (int i = 0; i < m * k; i ++) A[i] = rand() / (float)RAND_MAX;
+    for (int i = 0; i < k * n; i ++) B[i] = rand() / (float)RAND_MAX;
+    
     float C[m * n] = {0.0};
-
     float CC[m * n] = {0.0};
 
     cblas_sgemm(CblasColMajor, CblasNoTrans, CblasNoTrans, m, n, k, alpha, A, m, B, k, beta, CC, m);
