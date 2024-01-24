@@ -5,7 +5,7 @@
 int main()
 {
     std::cout << "This is my optimized_gemm for zen3 ...." << std::endl;
-    int m = 8, k = 8, n = 8;
+    int m = 12, k = 12, n = 12;
     float alpha = 1.0f, beta = 0.0f;
     float *A = (float*)malloc(m * k);
     float *B = (float*)malloc(k * n);

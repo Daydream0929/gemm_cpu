@@ -64,17 +64,49 @@ void gemm::zen3::AddDot1x4(int k, int alpha, int beta, const float *A, int lda,
     C(0, 3) += c_03_reg;
 }
 
+void gemm::zen3::AddDot4x4(int k, int alpha, int beta, const float *A, int lda,
+                           const float *B, int ldb, float *C, int ldc)
+{
+    int p;
+    for (p = 0; p < k; p ++ ) {
+        C(0, 0) += A(0, p) * B(p, 0);
+        C(0, 1) += A(0, p) * B(p, 1);     
+        C(0, 2) += A(0, p) * B(p, 2);     
+        C(0, 3) += A(0, p) * B(p, 3); 
+
+        C(1, 0) += A(1, p) * B(p, 0);
+        C(1, 1) += A(1, p) * B(p, 1);     
+        C(1, 2) += A(1, p) * B(p, 2);     
+        C(1, 3) += A(1, p) * B(p, 3); 
+
+        C(2, 0) += A(2, p) * B(p, 0);
+        C(2, 1) += A(2, p) * B(p, 1);     
+        C(2, 2) += A(2, p) * B(p, 2);     
+        C(2, 3) += A(2, p) * B(p, 3); 
+
+        C(3, 0) += A(3, p) * B(p, 0);
+        C(3, 1) += A(3, p) * B(p, 1);     
+        C(3, 2) += A(3, p) * B(p, 2);     
+        C(3, 3) += A(3, p) * B(p, 3); 
+    }
+}
+
 void gemm::zen3::sgemm(const char transa, const char transb, const int m,
                        const int n, const int k, const float alpha,
                        const float *A, const int lda, const float *B,
                        const int ldb, const float beta, float *C, const int ldc)
 {
-    int i, j, p;
+    int i, j;
     for (j = 0; j < n; j += 4)
     {
-        for (i = 0; i < m; i++)
+        for (i = 0; i < m; i += 4)
         {
-            AddDot1x4(k, alpha, beta, &A(i, 0), lda, &B(0, j), ldb, &C(i, j), ldc);
+            AddDot4x4(k, alpha, beta, &A(i, 0), lda, &B(0, j), ldb, &C(i, j), ldc);
         }
     }
+    // for (int j = 0; j < n; j += 4) {
+    //     for (int i = 0; i < m; i ++) {
+    //         AddDot1x4(k, alpha, beta, &A(i, 0), lda, &B(0, j), ldb, &C(i, j), ldc);
+    //     } 
+    // }
 }

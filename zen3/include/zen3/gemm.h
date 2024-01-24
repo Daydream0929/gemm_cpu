@@ -25,6 +25,8 @@ namespace zen3 {
 
     void AddDot1x4(int, int, int, const float*, int, const float*, int, float*, int);
 
+    void AddDot4x4(int, int, int, const float*, int, const float*, int, float*, int);
+
 }
 
 }
