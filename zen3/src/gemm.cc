@@ -26,8 +26,26 @@ void gemm::zen3::AddDot1x4(int k, int alpha, int beta, const float* A, int lda, 
     bp2_pntr = &B(0, 2);
     bp3_pntr = &B(0, 3);
     
-    for (p = 0; p < k; p ++) {
+    for (p = 0; p < k; p +=4 ) {
         a_0p_reg = A(0, p);
+        c_00_reg += alpha_reg * a_0p_reg * (*bp0_pntr++);
+        c_01_reg += alpha_reg * a_0p_reg * (*bp1_pntr++);
+        c_02_reg += alpha_reg * a_0p_reg * (*bp2_pntr++);
+        c_03_reg += alpha_reg * a_0p_reg * (*bp3_pntr++);
+
+        a_0p_reg = A(0, p + 1);
+        c_00_reg += alpha_reg * a_0p_reg * (*bp0_pntr++);
+        c_01_reg += alpha_reg * a_0p_reg * (*bp1_pntr++);
+        c_02_reg += alpha_reg * a_0p_reg * (*bp2_pntr++);
+        c_03_reg += alpha_reg * a_0p_reg * (*bp3_pntr++);
+
+        a_0p_reg = A(0, p + 2);
+        c_00_reg += alpha_reg * a_0p_reg * (*bp0_pntr++);
+        c_01_reg += alpha_reg * a_0p_reg * (*bp1_pntr++);
+        c_02_reg += alpha_reg * a_0p_reg * (*bp2_pntr++);
+        c_03_reg += alpha_reg * a_0p_reg * (*bp3_pntr++);
+
+        a_0p_reg = A(0, p + 3);
         c_00_reg += alpha_reg * a_0p_reg * (*bp0_pntr++);
         c_01_reg += alpha_reg * a_0p_reg * (*bp1_pntr++);
         c_02_reg += alpha_reg * a_0p_reg * (*bp2_pntr++);
